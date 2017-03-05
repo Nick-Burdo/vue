@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn Vue</title>
+</head>
+<body>
+<h3>App 1</h3>
+<div id="app1">
+    {{ message }}
+</div>
+
+<h3>App2</h3>
+<div id="app2">
+    <p v-bind:title="title">{{message}}</p>
+</div>
+
+<h3>App3</h3>
+<div id="app3">
+    <p v-if="seen">Сейчас меня видно</p>
+    <p v-if="!seen">Сейчас меня не видно</p>
+    <button v-on:click="toggleSeen">toggle seen</button>
+</div>
+
+<h3>Todos</h3>
+<ol id="app4">
+    <li v-for="todo in todos">{{todo.text}}</li>
+</ol>
+
+<h3>Model binding</h3>
+<div id="app5">
+    <p>{{message}}</p>
+    <input v-model="message">
+</div>
+
+<h3>Vue components</h3>
+<ol id="app6">
+    <todo-item v-for="item in list" v-bind:todo="item"></todo-item>
+</ol>
+
+<h3>Watchers</h3>
+<div id="watch-example">
+    <p>
+        Задайте вопрос, на который можно ответить "да" или "нет":
+        <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+    <p><img :src="image" alt=""> </p>
+</div>
+
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
